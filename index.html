@@ -2,7 +2,8 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Button Link App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Selector</title>
     <style>
         body {
             margin: 0;
@@ -10,55 +11,73 @@
             min-height: 100vh;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h1 {
             text-align: center;
-            padding: 30px 0;
+            padding: 20px 0;
             color: #333;
-            font-size: 36px;
+            font-size: 28px;
             margin: 0;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
         }
 
         .button-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
         }
 
         button {
-            padding: 20px;
-            font-size: 18px;
+            padding: 15px;
+            font-size: 16px;
             font-weight: 500;
             cursor: pointer;
             background-color: #ffffff;
             color: #333;
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            width: 100%;
         }
 
         button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             background-color: #4CAF50;
             color: white;
         }
 
         button:active {
             transform: translateY(1px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        @media (max-width: 600px) {
+        /* Sicherstellen, dass es auf kleinen Bildschirmen gut aussieht */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 24px;
+                padding: 15px 0;
+            }
+            
             .button-container {
-                grid-template-columns: 1fr;
-                padding: 20px;
+                padding: 15px;
+                gap: 10px;
+            }
+            
+            button {
+                padding: 12px;
+                font-size: 14px;
             }
         }
     </style>
