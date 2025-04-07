@@ -1,97 +1,125 @@
 <!DOCTYPE html>
- <html lang="de">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Meme Selector</title>
-     <style>
-         body {
-             margin: 0;
-             padding: 0;
-             min-height: 100vh;
-             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-             font-family: Arial, sans-serif;
-             display: flex;
-             flex-direction: column;
-             align-items: center;
-         }
- 
-         h1 {
-             text-align: center;
-             padding: 20px 0;
-             color: #333;
-             font-size: 28px;
-             margin: 0;
-             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-             width: 100%;
-             max-width: 400px;
-         }
- 
-         .button-container {
-             display: flex;
-             flex-direction: column;
-             gap: 15px;
-             padding: 20px;
-             width: 100%;
-             max-width: 400px;
-             box-sizing: border-box;
-         }
- 
-         button {
-             padding: 15px;
-             font-size: 20px;
-             font-weight: 500;
-             cursor: pointer;
-             background-color: #ffffff;
-             color: #333;
-             border: none;
-             border-radius: 10px;
-             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-             transition: all 0.3s ease;
-             width: 100%;
-         }
- 
-         button:hover {
-             transform: translateY(-2px);
-             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-             background-color: #4CAF50;
-             color: white;
-         }
- 
-         button:active {
-             transform: translateY(1px);
-             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-         }
- 
-         /* Sicherstellen, dass es auf kleinen Bildschirmen gut aussieht */
-         @media (max-width: 400px) {
-             h1 {
-                 font-size: 24px;
-                 padding: 15px 0;
-             }
- 
-             .button-container {
-                 padding: 15px;
-                 gap: 10px;
-             }
- 
-             button {
-                 padding: 12px;
-                 font-size: 14px;
-                 font-size: 18px;
-             }
-         }
-     </style>
- </head>
- <body>
-     <h1>Meme Selector</h1>
-     <div class="button-container">
-         <button onclick="window.open('https://www.google.com', '_blank')">Google</button>
-         <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
-         <button onclick="window.open('https://www.wikipedia.org', '_blank')">Wikipedia</button>
-         <button onclick="window.open('https://www.github.com', '_blank')">GitHub</button>
-         <button onclick="window.open('https://www.reddit.com', '_blank')">Reddit</button>
-         <button onclick="window.open('https://www.twitter.com', '_blank')">Twitter</button>
-     </div>
- </body>
- </html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meme Selector</title>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #6200ee;
+      --primary-hover: #3700b3;
+      --background: #f5f5f5;
+      --text: #212121;
+      --button-bg: white;
+      --button-hover: #e8f0fe;
+      --button-radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin: 30px 0 10px;
+      color: var(--text);
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      font-size: 18px;
+      color: var(--text);
+      background-color: var(--button-bg);
+      border: none;
+      border-radius: var(--button-radius);
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    button:hover {
+      background-color: var(--button-hover);
+      transform: translateY(-2px);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    button:active {
+      transform: scale(0.98);
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .material-icons {
+      font-size: 22px;
+      color: var(--primary);
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 12px 14px;
+      }
+
+      .material-icons {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Meme Selector</h1>
+
+  <div class="button-container">
+    <button onclick="window.open('https://www.google.com', '_blank')">
+      <span class="material-icons">search</span> Google
+    </button>
+    <button onclick="window.open('https://www.youtube.com', '_blank')">
+      <span class="material-icons">smart_display</span> YouTube
+    </button>
+    <button onclick="window.open('https://www.wikipedia.org', '_blank')">
+      <span class="material-icons">menu_book</span> Wikipedia
+    </button>
+    <button onclick="window.open('https://www.github.com', '_blank')">
+      <span class="material-icons">code</span> GitHub
+    </button>
+    <button onclick="window.open('https://www.reddit.com', '_blank')">
+      <span class="material-icons">forum</span> Reddit
+    </button>
+    <button onclick="window.open('https://www.twitter.com', '_blank')">
+      <span class="material-icons">alternate_email</span> Twitter
+    </button>
+  </div>
+</body>
+</html>
