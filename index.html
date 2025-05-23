@@ -128,5 +128,18 @@
       <span class="material-icons">location_on</span> Platzhalter 2
     </button>
   </div>
+
+    <div id="audio-player">
+    <audio id="player" controls style="width:100%; max-width:600px;"></audio>
+  </div>
+
+  <script>
+    function playSound(url) {
+      const player = document.getElementById('player');
+      player.src = url;
+      player.play();
+    }
+  </script>
+  
 </body>
 </html>
